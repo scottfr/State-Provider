@@ -6,7 +6,7 @@ State Provider is a small library that makes it easy to track the state of an ob
 
 Create a state provider (your project may have multiple state providers):
 
-> var sp = new StatProvider();
+> var sp = new StateProvider();
 
 Add an existing object to the state provider (you can add as many objects as you want to a state provider):
 
