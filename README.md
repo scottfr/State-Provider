@@ -14,7 +14,7 @@ Add an existing object to the state provider (you can add as many objects as you
 >
 > var dataTracked = sp.add(data);
 
-When the tracked data is modified, a record of the changes made to it will autoamtically be made:
+When the tracked objects are modified, a record of the changes made to them will automatically be saved in the state provider:
 
 > dataTracked.title = "A New Book";
 
