@@ -30,6 +30,10 @@ You can use the StateProvider.undo(), redo() and restore() functions to access t
 >
 > dataTracked.title; # = "A New Book"
 
+# Time Function
+
+The timeFunction property on the State Provider config object lets you determine how changes are batched together. If you change the function to something that has a 1-minute resolution, for instance, all changes in a given minute will be batched together.
+
 # Compatibility
 
 State Provider uses Proxies which are an ECMAScript 6 feature. At this point, only Firefox supports proxies. Other browsers should be adding them soon.
