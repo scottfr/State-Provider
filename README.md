@@ -20,15 +20,17 @@ When data is modified now, a record of the changes made to it will be made:
 
 You can use the StateProvider.undo(), redo() and restore() functions to access this record:
 
-> dataTracked.title; # = "A New Book"
+> dataTracked.title; // = "A New Book"
 >
 > sp.undo();
 >
-> dataTracked.title; # = "My Book"
+> dataTracked.title; // = "My Book"
 >
 > sp.redo();
 >
-> dataTracked.title; # = "A New Book"
+> dataTracked.title; // = "A New Book"
+
+The demo.html file illustrates the usage of this library in combination with a two-way data binding library.
 
 # Time Function
 
