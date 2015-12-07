@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/rivets/0.8.1/rivets.bundled.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  
+  <script src="dist/state_provider.js"></script>
+
+  <meta charset="utf-8" />
+</head>
+<body>
+  <p>This example illustrates a simple undo/redo system. Rivets.js is used for two-way data binding.</p>
+  <div id="book">
+    Title: <input rv-value="book.title"><br/>
+    Cost: <input rv-value="book.cost"><br/>
+    <input type="checkbox" rv-checked="book.available"> Available </br>
+  </div>
+  <div id="author">
+    Author First Name: <input rv-value="author.first"><br/>
+    Author Last Name: <input rv-value="author.last"><br/>
+  </div>
+  <a href="#" id="undo">Undo</a>
+  <a href="#" id="redo">Redo</a>
+
+  <script>
+
+  var sp = new StateProvider();
+
+  var book = sp.add({
+    title: 'Awesome Book Title',
+    available: true,
+    cost: '$5.15'
+  });
+  rivets.bind($('#book'), {'book': book});
+
+  var author = sp.add({
+    first: 'Scott',
+    last: 'Smith'
+  });
+  rivets.bind($('#author'), {'author': author});
+
+
+  $("#undo").click(() => sp.undo());
+  $("#redo").click(() => sp.redo());
+
+  </script>
+</body>
+</html>
